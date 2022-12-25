@@ -8,5 +8,5 @@ The .exe should work standalone. If you have any problem or question, feel free 
 - Run it
 - Enter the file path (you can also drag and drop it)
 - Press Enter
-- Voilà
+- Voilà  
 Note that if your JSON file is located in `C:\folder\example.json`, the songs will be downloaded in `C:\folder\example downloads\`.
