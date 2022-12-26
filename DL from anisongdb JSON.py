@@ -17,14 +17,19 @@ while not source:
         if filename == "exit()":
             exit()
         print("Please input the path to a JSON file.")
-print()
 
 dir = filename[0:-5] + " downloads"
+dirs = input("Download folder (default: " + dir + "\) : " if os.name == "nt" else "/) : ").replace("\"","")
+dir = dirs if dirs.strip() != "" else dir
+
+print()
+
 ann = None
 anime = None
 if not os.path.exists(dir):
     os.mkdir(dir)
 ins = 1
+progress = 0
 
 for L in source:
     url = L['audio']
@@ -66,7 +71,11 @@ for L in source:
         audiofile.tag.title = L['songName'] + " (" + anime + " - " + type + ")"
         audiofile.tag.save()
         print("Added")
-        print(name + " complete, to next song!\n")
+        progress+=1
+        print("{0} complete, to next song! {1}/{2} ({3}%)\n".format(name, progress, len(source), round(progress/len(source)*100), 2))
+    else:
+        progress+=1
+        print("No audio found for {0} - {1}, skipping. {2}/{3} ({4}%)\n".format(L['songArtist'], L['songName'], progress, len(source), round(progress/len(source)*100), 2))
 
 
 input("Done! Press Enter to exit.")
