@@ -9,7 +9,7 @@ source = None
 
 while not source:
     try:
-        filename = input("File path:").replace("\"","")
+        filename = input("File path: ").replace("\"","")
         file = open(filename, encoding='utf-8')
         source = json.load(file)
         file.close()
