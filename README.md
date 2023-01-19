@@ -1,5 +1,5 @@
 # DL-from-anisongdb-JSON
-A program to download all the songs from an anisongdb.com JSON file as mp3 files with title and artist ID3 tags.  
+A program to download all the songs from an [anisongdb](https://anisongdb.com) JSON file as mp3 files with title and artist ID3 tags.  
 Python depedencies: requests, BeautifulSoup, eyed3  
 The .exe should work standalone. If you have any problem or question, feel free to contact me.
 
