@@ -69,7 +69,7 @@ for L in source:
 
         audiofile.tag.artist = L['songArtist']
         audiofile.tag.title = L['songName'] + " (" + anime + " - " + type + ")"
-        audiofile.tag.save()
+        audiofile.tag.save(version=(2,3,0))
         print("Added")
         progress+=1
         print("{0} complete, to next song! {1}/{2} ({3}%)\n".format(name, progress, len(source), round(progress/len(source)*100), 2))
