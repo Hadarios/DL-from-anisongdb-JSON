@@ -88,7 +88,7 @@ for L in source:
                 if name[i] not in ["/", "\\", "*", "|", ":", "?", "\"", "<", ">"]:
                     namefile += name[i]
             namefile = dir + "\\" + namefile + ".mp3"
-            subprocess.run('ffmpeg -i temp.webm "{0}"'.format(namefile),shell=True)
+            subprocess.run('ffmpeg -hide_banner -loglevel error -i temp.webm "{0}"'.format(namefile),shell=True)
             os.remove("temp.webm")
             print("Complete")
 
